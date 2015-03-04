@@ -55,7 +55,7 @@ public class RectCountLayout {
 		basePIScalar = new Scalar((stageMaxX + stageMinX) / 2, (stageMaxY + 3 * stageMinY) / 4);
 		resultPIScalar = new Scalar((stageMaxX + stageMinX) / 2, (3 * stageMaxY + stageMinY) / 4);
 		
-		loadingText = new LoadingText(p, "Loading", p.displayWidth - 100, p.displayHeight - 110);
+		loadingText = new LoadingText(p, "Loading", 100, p.displayHeight - 110);
 	}
 	
 	
@@ -176,17 +176,6 @@ public class RectCountLayout {
 	
 	
 	public void showLoadingText() {
-		/*
-		String str = "Loading...";
-		if (!loadingText.isVisible()) {
-			loadingText.startShow(p.displayWidth - 100, p.displayHeight - 110);
-		}
-		
-		p.fill(0, 0, 0);
-		p.textSize(20);
-		p.textAlign(PApplet.CENTER);
-		p.text(str, p.displayWidth - 100, p.displayHeight - 110);
-		*/
 		loadingText.show();
 	}
 	
@@ -254,7 +243,7 @@ public class RectCountLayout {
 		tool.setupFileBtn(0, (p.displayHeight - 100), 200, 100);
 		tool.setupNextBtn((p.displayWidth - 200) / 2, (p.displayHeight - 100), 200, 100);
 		tool.setupDetectBtn((p.displayWidth - 200), (p.displayHeight - 100), 200, 100);
-		tool.setupCheckBox(10, p.displayHeight - 140, 30, 30);
+		tool.setupCheckBox(p.displayWidth - 200, p.displayHeight - 140, 30, 30);
 	}
 	
 	
