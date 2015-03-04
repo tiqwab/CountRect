@@ -260,17 +260,17 @@ public class RectCountLayout {
 	}
 	
 	
-	public void clear() {
-		basePI = null;
-		resultPI = null;
-		resultRect = null;
-		resultRects.clear();
-		resultVertices.clear();
-		ind_rect = 0;
-		ind_rectNo = -1;
+    public void clear() {
+    	basePI = null;
+    	resultPI = null;
+    	resultRect = null;
+    	resultRects.clear();
+    	resultVertices.clear();
+    	ind_rect = 0;
+    	ind_rectNo = -1;
 		
-		finishDetect();
-		refresh();
-	}
+    	finishDetect();
+    	refresh();
+    }
 
 }
