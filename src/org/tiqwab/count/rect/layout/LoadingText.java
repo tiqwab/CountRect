@@ -20,7 +20,7 @@ public class LoadingText extends DynamicText {
 	
 	@Override
 	public void show() {
-		frame = (frame + 1) % frameCount;
+		frame %= frameCount;
 		if (frame == 0) {
 			index = (index + 1) % 4;
 			
@@ -36,7 +36,7 @@ public class LoadingText extends DynamicText {
 			
 			text = originalText + sb.toString();
 		}
-		
+		frame++;
 		super.show();
 	}
 
