@@ -33,6 +33,8 @@ public class RectCountLayout {
 	int ind_rect = 0;
 	int ind_rectNo = -1;
 	
+	DynamicText loadingText;
+	
 	final PApplet p;
 	
 	RectCountThread counterTh;
@@ -52,6 +54,8 @@ public class RectCountLayout {
 		stageMaxY = p.displayHeight * 7 / 8;
 		basePIScalar = new Scalar((stageMaxX + stageMinX) / 2, (stageMaxY + 3 * stageMinY) / 4);
 		resultPIScalar = new Scalar((stageMaxX + stageMinX) / 2, (3 * stageMaxY + stageMinY) / 4);
+		
+		loadingText = new LoadingText(p, "Loading", p.displayWidth - 100, p.displayHeight - 110);
 	}
 	
 	
@@ -172,12 +176,18 @@ public class RectCountLayout {
 	
 	
 	public void showLoadingText() {
+		/*
 		String str = "Loading...";
+		if (!loadingText.isVisible()) {
+			loadingText.startShow(p.displayWidth - 100, p.displayHeight - 110);
+		}
 		
 		p.fill(0, 0, 0);
 		p.textSize(20);
 		p.textAlign(PApplet.CENTER);
 		p.text(str, p.displayWidth - 100, p.displayHeight - 110);
+		*/
+		loadingText.show();
 	}
 	
 	
@@ -226,11 +236,13 @@ public class RectCountLayout {
 	
 	public void beginDetect() {
 		isLoading = true;
+		loadingText.startShow();
 	}
 	
 	
 	public void finishDetect() {
 		isLoading = false;
+		loadingText.endShow();
 		if (counterTh != null) {
 			counterTh.cancel();
 			counterTh = null;
